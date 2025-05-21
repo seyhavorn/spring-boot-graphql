@@ -49,7 +49,7 @@ export default function Home() {
             },
             body: JSON.stringify({query})
         }
-        fetch("http://localhost:9090/graphql", options)
+        fetch("http://localhost:9090/api/graphql", options)
             .then(res => res.json())
             .then(data => setBooks(data.data.books))
             .catch(err => console.log(err))
