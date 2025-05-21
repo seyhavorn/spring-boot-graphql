@@ -56,7 +56,7 @@ export default function Home() {
             .finally(() => {
                 setLoading(false);
             })
-    });
+    }, []);
 
     if (loading) {
         return "loading..."
@@ -68,11 +68,12 @@ export default function Home() {
 
     return (
         <div className="flex flex-col content-center items-center bg-gray-100">
+            <h1 className="text-blue-700 font-extrabold text-5xl mt-10">Spring boot with GraphQL</h1>
             <div className="flex flex-row min-h-screen items-center justify-center gap-4">
                 {books.map((book: Book, index: number) => (
                     <div key={book.id}
                          className="max-w-xs cursor-pointer rounded-lg bg-white p-2 shadow duration-150 hover:scale-105 hover:shadow-md">
-                        <img className="w-full rounded-lg object-cover object-center"
+                        <img className="w-[20rem] h-[20rem] rounded-lg object-cover object-center"
                              src={booksPictures[index]}
                              alt={book.name}/>
                         <div>
