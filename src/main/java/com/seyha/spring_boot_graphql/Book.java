@@ -20,4 +20,10 @@ public record Book(Integer id,
                 .filter(b -> b.id.equals(id))
                 .findFirst();
     }
+
+    public static Optional<Book> getBookByName(String name) {
+        return books.stream()
+                .filter(b -> b.name.equals(name))
+                .findFirst();
+    }
 }

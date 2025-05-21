@@ -23,6 +23,11 @@ public class BookController {
         return Book.getBookById(id);
     }
 
+    @QueryMapping
+    public Optional<Book> bookByName(@Argument String name) {
+        return Book.getBookByName(name);
+    }
+
     @SchemaMapping
     public Optional<Author> author(Book book) {
         return Author.getAuthorById(book.authorId());
